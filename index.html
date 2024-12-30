@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        fontFamily: {
+          sans: ['Times New Roman', 'sans-serif']
+        }
+      }
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+    integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="javascript/script.js" defer></script>
+  <!-- This is the script file, calling it using defer to guarantee order -->
+  <link rel="stylesheet" href="output.css">
+  <title>QR Code Generator</title>
+</head>
+
+<body class="h-screen bg-gray-300">
+
+  <header class="bg-gray-800 text-white p-10">
+    <h1 class="m-auto text-3xl text-center">
+      QR Code Generator
+    </h1>
+  </header>
+
+  <main>
+    <!--This contains the bottom of the page-->
+    <div class="flex ml-[25%] mr-[25%] mt-[1%] drop-shadow-xl bg-white rounded-lg">
+
+      <!--This contains the options side-->
+      <div class="flex flex-col w-[45%] rounded-lg mr-[5%]">
+        <!--This is the textbox-->
+        <label for="input" class="text-center p-5 mt-5 text-xl">Enter text to generate QR Code </label>
+        <input id="input" type="text"
+          class="w-[70%] mr-auto ml-auto h-[4%] p-4 rounded-lg border-2 border-black placeholder-gray-500">
+        <!--This is the size slider-->
+        <label for="sizeSlider" class="p-5 text-center text-xl">QR Code Size</label>
+        <input type="range" id="sizeSlider" min="100" max="450" value="200" class="w-[70%] ml-auto mr-auto" />
+
+        <!-- Color Picker -->
+        <label for="colorPicker" class="text-xl text-center p-5">QR Code Color</label>
+        <input type="color" id="colorPicker" value="#000000" class="w-[70%] mr-auto ml-auto">
+
+        <!-- Background Color Picker -->
+        <label for="bgColorPicker" class="text-xl text-center p-5">Background Color</label>
+        <input type="color" id="bgColorPicker" value="#ffffff" class="w-[70%] mr-auto ml-auto mb-10">
+
+        <a id='qrdl' hidden>Download</a>
+      </div>
+
+      <!--This contains the QRCODE side-->
+      <div id="qrCode" class="mt-10 mb-auto ml-auto mr-auto justify-center pb-10 pr-10">
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
+
+<!--
+1. Add options for
+    - Color
+    - Size
+    - Background Color
+    - Dark Mode
+2. Add a button to download the QR Code
+
+  -->
+<!-- Dark Mode Toggle -->
+<!-- <div class=" absolute top-4 right-4">
+        <button id="darkModeToggle"
+          class="bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded focus:outline-none shadow-md">
+          Toggle Dark Mode
+        </button>
+      </div> -->
+
+<!-- <div class="flex justify-center">
+    <div class="w-1/2 bg-white p-10 rounded-lg">
+      <h1 class="text-2xl text-center mb-5">QR Code Generator</h1>
+      <form action="generate.php" method="POST">
+        <div class="mb-5">
+          <label for="text" class="block text-sm font-medium text-gray-700">Text</label>
+          <input type="text" name="text" id="text"
+            class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 sm:text-sm">
+        </div>
+        <div class="mb-5">
+          <label for="size" class="block text-sm font-medium text-gray-700">Size</label>
+          <input type="number" name="size" id="size"
+            class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 sm:text-sm">
+        </div>
+        <div class="mb-5">
+          <label for="color" class="block text-sm font-medium text-gray-700">Color</label>
+          <input type="color" name="color" id="color"
+            class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 sm:text-sm">
+        </div>
+        <div class="mb-5">
+          <label for="bgColor" class="block text-sm font-medium text-gray-700">Background Color</label>
+          <input type="color" name="bgColor" id="bgColor"
+            class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 sm:text-sm">
+        </div>
+        <button type="submit"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Generate</button>
+      </form>
+      <div class="mt-5">
+        < </main> -->
+
+
+<!-- This is the size slider
+<div>
+  Text description for the QR code size slider
+  <div class="mb-4 text-gray-700">
+    <p class="text-lg font-medium">Select QR Code Size</p>
+  </div>
+
+  Slider for selecting the QR code size
+  <div class="mb-4 border-2">
+    <input type="range" id="sizeSlider" min="100" max="500" value="200" class="w-full" />
+  </div>
+</div> -->
